@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Counter</title>
+</head>
+<body>
+	<div id="counter">0</div>
+	<button id="increase">+</button>
+	<button id="decrease">-</button>
+	<script>
+		// const $counter = document.getElementById('counter-x');
+		const $counter = document.getElementById('counter');
+		const $increase = document.getElementById('increase');
+		const $decrease = document.getElementById('decrease');
+
+		let num = 0;
+		const render = function (){$counter.innerHTML = num;};
+
+		$increase.onclick = function(){
+			num++;
+			console.log('increase button 클릭', num);
+			render();
+		};
+
+		$decrease.onclick = function(){
+			num--;
+			console.log('decrease button 클릭', num);
+			render();
+		};
+	</script>
+</body>
+</html>
+
+<!-- counter 대신 counter-x를 사용했을 경우 객체의 값이 null이기 때문에 오류가 발생 -->
